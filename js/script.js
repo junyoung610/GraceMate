@@ -8,7 +8,7 @@ function getTodayKey() {
 
 async function loadTodayVerse() {
   try {
-    const res = await fetch("/json/bibleByDate.json"); // 경로는 상황에 맞게 조정
+    const res = await fetch("./json/bibleByDate.json"); // 경로는 상황에 맞게 조정
     const data = await res.json();
 
     const todayKey = getTodayKey();
