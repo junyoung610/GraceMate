@@ -1,0 +1,106 @@
+@charset 'utf-8';
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+* {
+  padding: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+body {
+  background: #f0f0f0;
+  font-family: "Pretendard";
+}
+
+section {
+  margin: 40px 0;
+}
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.247);
+  --text-color: #ffffff;
+  --accent-color: #a2d2ff;
+}
+
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/* 메뉴 */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-group li {
+  width: 120px;
+  background: #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+.card {
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+#bible {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#verse-text {
+  font-size: 18px;
+}
+
+#verse-ref {
+  text-align: right;
+  font-size: 16px;
+  color: #333;
+}
+
+.employment-text-box {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+#dday-text {
+  font-weight: 700;
+}

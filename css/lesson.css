@@ -1,0 +1,59 @@
+@charset 'utf-8';
+
+#chatbot {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chatbot {
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+}
+
+.chatbot:nth-child(2) {
+  background: #f00;
+}
+
+.chatbot:nth-child(3) {
+  background: #ff0;
+}
+
+.chatbot:nth-child(4) {
+  background: #00f;
+}
+
+#prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#prompt input {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.btn-wrap button {
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#generate-prompt-btn {
+  border: none;
+  background: #049000;
+}
+
+#copy-prompt-btn {
+  border: none;
+  background: #0f5;
+}
