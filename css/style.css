@@ -1,7 +1,9 @@
 @charset 'utf-8';
-
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
+/* ============================
+   공통 초기 설정 (style.css 기반)
+============================ */
 * {
   padding: 0;
   bottom: 0;
@@ -58,7 +60,6 @@ section {
   display: flex;
   justify-content: space-between;
 }
-
 .btn-group li {
   width: 120px;
   background: #ddd;
@@ -66,6 +67,7 @@ section {
   text-align: center;
 }
 
+/* 카드 공통 디자인 */
 .card {
   background: var(--glass-bg);
   box-shadow: var(--glass-shadow);
@@ -78,29 +80,300 @@ section {
   font-weight: 700;
 }
 
+/* D-Day */
 #bible {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
-
 #verse-text {
   font-size: 18px;
 }
-
 #verse-ref {
   text-align: right;
   font-size: 16px;
   color: #333;
 }
-
 .employment-text-box {
   margin-top: 25px;
   display: flex;
   justify-content: space-between;
   font-size: 18px;
 }
-
 #dday-text {
   font-weight: 700;
+}
+
+/* ============================
+   counsel.css (상담 페이지)
+============================ */
+.chatbot {
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(206, 221, 99, 0.664);
+}
+
+.card-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chip-group button {
+  border: none;
+  padding: 5px;
+  background: #d5d5;
+}
+.chip-group button.active {
+  background: #ff7878;
+}
+
+textarea {
+  padding: 5px;
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.btn-wrap button {
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#generate-counsel-prompt-btn {
+  border: none;
+  background: #049000;
+}
+#copy-counsel-prompt-btn {
+  border: none;
+  background: #0f5;
+}
+
+/* ============================
+   image.css (이미지 프롬프트 생성)
+============================ */
+#chatbot,
+#chip-group,
+#img-style {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#image-type-group {
+  display: flex;
+  justify-content: space-between;
+}
+#image-type-group button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgb(107, 107, 229);
+}
+
+#imagetext {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#imagetext input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#img-style select {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#generate-image-prompt-btn {
+  border: none;
+  background: #049000;
+}
+#copy-image-prompt-btn {
+  border: none;
+  background: #0f5;
+}
+
+/* ============================
+   lesson.css (공과 프롬프트 생성)
+============================ */
+#chatbot {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chatbot:nth-child(2) {
+  background: #4daaff;
+}
+
+.chatbot:nth-child(3) {
+  background: #4caf50;
+}
+
+.chatbot:nth-child(4) {
+  background: #3f51b5;
+}
+
+#prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#prompt input {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#generate-prompt-btn {
+  border: none;
+  background: #049000;
+}
+
+#copy-prompt-btn {
+  border: none;
+  background: #0f5;
+}
+
+/* ============================
+   ✅ 반응형 레이아웃 (Tablet)
+   1024px 이하
+============================ */
+@media (max-width: 1024px) {
+  section {
+    margin: 30px 0;
+  }
+
+  #header h1 {
+    font-size: 32px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  #verse-text {
+    font-size: 16px;
+  }
+
+  .employment-text-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ============================
+   ✅ 반응형 레이아웃 (Mobile)
+   768px 이하
+============================ */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .inner {
+    width: 330px;
+    margin: 0 auto;
+  }
+
+  section {
+    margin: 25px 0;
+  }
+
+  /* 헤더: 로고/타이틀 위, 메뉴 아래로 세로 정렬 */
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: auto;
+    padding-top: 15px;
+  }
+
+  #header h1 {
+    font-size: 26px;
+  }
+
+  .btn-group {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .btn-group li {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 120px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  #bible {
+    gap: 18px;
+  }
+
+  #verse-text {
+    font-size: 15px;
+  }
+
+  #verse-ref {
+    font-size: 14px;
+  }
+
+  /* 버튼 래핑 & 전체 폭 사용 */
+  .btn-wrap {
+    justify-content: center;
+  }
+
+  .btn-wrap button {
+    flex: 1 1 45%;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  /* 이미지 타입 버튼 세로 정렬 */
+  #image-type-group {
+    flex-direction: column;
+  }
+
+  #image-type-group button {
+    width: 100%;
+  }
+
+  /* 입력 컨트롤 여백 조정 */
+  #prompt input,
+  #imagetext input,
+  textarea,
+  #img-style select {
+    font-size: 14px;
+  }
+
+  /* .chatbot 높이 줄이기 (모바일에서 답답하지 않게) */
+  .chatbot {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  /* D-Day 텍스트 정렬 */
+  .employment-text-box {
+    font-size: 15px;
+  }
 }

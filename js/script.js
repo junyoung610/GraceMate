@@ -118,3 +118,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // chip-group 공통 클릭 이벤트
+  document.querySelectorAll(".chip-group").forEach((group) => {
+    group.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("chip")) return;
+
+      // 기존 active 제거
+      [...group.querySelectorAll(".chip")].forEach((btn) => btn.classList.remove("active"));
+
+      // 클릭한 chip에 active 추가
+      e.target.classList.add("active");
+    });
+  });
+});

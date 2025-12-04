@@ -14,15 +14,15 @@
 }
 
 .chatbot:nth-child(2) {
-  background: #f00;
+  background: #4daaff;
 }
 
 .chatbot:nth-child(3) {
-  background: #ff0;
+  background: #4caf50;
 }
 
 .chatbot:nth-child(4) {
-  background: #00f;
+  background: #3f51b5;
 }
 
 #prompt {
