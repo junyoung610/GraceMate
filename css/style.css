@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "utf-8";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 /* ============================
@@ -22,20 +22,28 @@ li {
 }
 
 body {
-  background: #f0f0f0;
-  font-family: "Pretendard";
+  /* 부드러운 파스텔 배경 (유초등부용) */
+  background: linear-gradient(180deg, #fffbe7, #ffe8f7, #e8f5ff);
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
 section {
   margin: 40px 0;
 }
 
+/* 파스텔 톤 공통 컬러 변수 */
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.15);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.247);
-  --text-color: #ffffff;
-  --accent-color: #a2d2ff;
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 1);
+  --glass-shadow: 0 8px 24px rgba(255, 193, 203, 0.35);
+  --text-color: #333333;
+  --accent-color: #ffb74d; /* 포인트 컬러 (파스텔 오렌지) */
+  --accent-soft-pink: #ffccde;
+  --accent-soft-blue: #b3e5fc;
+  --accent-soft-green: #c8e6c9;
+  --accent-soft-yellow: #fff9c4;
 }
 
 .inner {
@@ -53,18 +61,33 @@ section {
 #header h1 {
   font-size: 40px;
   font-weight: 700;
+  color: #ff8a65;
 }
 
 /* 메뉴 */
 .btn-group {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
+
 .btn-group li {
   width: 120px;
-  background: #ddd;
+  background: #ffe082;
   padding: 15px;
   text-align: center;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #5d4037;
+  box-shadow: 0 4px 10px rgba(255, 167, 38, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-group li:hover {
+  background: #ffd54f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255, 167, 38, 0.4);
 }
 
 /* 카드 공통 디자인 */
@@ -73,34 +96,48 @@ section {
   box-shadow: var(--glass-shadow);
   border-radius: 20px;
   padding: 25px;
+  border: 1px solid var(--glass-border);
+  color: var(--text-color);
 }
 
 .title {
   font-size: 25px;
   font-weight: 700;
+  color: #ff8a65;
 }
 
-/* D-Day */
+/* D-Day / 말씀 카드 */
 #bible {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
+
 #verse-text {
   font-size: 18px;
+  line-height: 1.6;
 }
+
 #verse-ref {
   text-align: right;
   font-size: 16px;
-  color: #333;
+  color: #666;
 }
+
 .employment-text-box {
   margin-top: 25px;
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+  align-items: center;
 }
+
 #dday-text {
+  font-weight: 700;
+  color: #ff7043;
+}
+
+.sub-title {
   font-weight: 700;
 }
 
@@ -112,47 +149,84 @@ section {
   height: 50px;
   border-radius: 20px;
   border: none;
-  background: rgba(206, 221, 99, 0.664);
+  background: linear-gradient(90deg, #ffccde, #fff9c4, #c8e6c9);
+  color: #4e342e;
+  font-weight: 600;
+  padding: 0 15px;
 }
 
+/* 카드 사이 여백 */
 .card-gap {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+/* 칩 버튼 (카테고리 선택) */
 .chip-group button {
   border: none;
-  padding: 5px;
-  background: #d5d5;
+  padding: 10px;
+  background: #ffe0b2;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #5d4037;
+  transition: background 0.15s ease, transform 0.15s ease;
 }
+
+.chip-group button:hover {
+  background: #ffcc80;
+  transform: translateY(-1px);
+}
+
 .chip-group button.active {
-  background: #ff7878;
+  background: #ff8a65;
+  color: #ffffff;
 }
 
+/* 텍스트 입력 */
 textarea {
-  padding: 5px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #ffccbc;
+  font-size: 15px;
 }
 
+/* 버튼 묶음 */
 .btn-wrap {
   display: flex;
   justify-content: flex-end;
   gap: 15px;
+  margin-top: 10px;
 }
 
 .btn-wrap button {
   font-size: 15px;
-  border-radius: 20px;
-  padding: 10px;
+  border-radius: 999px;
+  padding: 10px 18px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 183, 77, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
 }
 
+/* 상담 프롬프트 생성 버튼 */
 #generate-counsel-prompt-btn {
-  border: none;
-  background: #049000;
+  background: #ffb74d;
+  color: #4e342e;
 }
+
+/* 상담 프롬프트 복사 버튼 */
 #copy-counsel-prompt-btn {
-  border: none;
-  background: #0f5;
+  background: #4dd0e1;
+  color: #004d40;
+}
+
+.btn-wrap button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(255, 183, 77, 0.5);
+  opacity: 0.95;
 }
 
 /* ============================
@@ -166,15 +240,30 @@ textarea {
   gap: 10px;
 }
 
+/* 이미지 타입 버튼 */
 #image-type-group {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
 }
+
 #image-type-group button {
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: none;
-  background: rgb(107, 107, 229);
+  background: #90caf9;
+  color: #0d47a1;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(144, 202, 249, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+#image-type-group button:hover {
+  background: #007ee5;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(100, 181, 246, 0.7);
 }
 
 #imagetext {
@@ -187,20 +276,28 @@ textarea {
   width: 100%;
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid #ffcdd2;
+  font-size: 15px;
 }
 
 #img-style select {
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid #ffe082;
+  font-size: 15px;
 }
 
+/* 이미지 프롬프트 생성/복사 버튼 */
 #generate-image-prompt-btn {
   border: none;
-  background: #049000;
+  background: #81c784;
+  color: #1b5e20;
 }
+
 #copy-image-prompt-btn {
   border: none;
-  background: #0f5;
+  background: #ffb74d;
+  color: #4e342e;
 }
 
 /* ============================
@@ -212,16 +309,17 @@ textarea {
   gap: 15px;
 }
 
+/* 공과 단계별 안내 바를 파스텔톤으로 */
 .chatbot:nth-child(2) {
-  background: #4daaff;
+  background: linear-gradient(90deg, #ffe0f7, #ffccbc);
 }
 
 .chatbot:nth-child(3) {
-  background: #4caf50;
+  background: linear-gradient(90deg, #e1f5fe, #c8e6c9);
 }
 
 .chatbot:nth-child(4) {
-  background: #3f51b5;
+  background: linear-gradient(90deg, #fff9c4, #ffecb3);
 }
 
 #prompt {
@@ -233,16 +331,22 @@ textarea {
 #prompt input {
   border-radius: 10px;
   padding: 10px;
+  border: 1px solid #ffe0b2;
+  font-size: 15px;
 }
 
+/* 공과 프롬프트 생성 버튼 */
 #generate-prompt-btn {
   border: none;
-  background: #049000;
+  background: #81c784;
+  color: #1b5e20;
 }
 
+/* 공과 프롬프트 복사 버튼 */
 #copy-prompt-btn {
   border: none;
-  background: #0f5;
+  background: #ffb74d;
+  color: #4e342e;
 }
 
 /* ============================
@@ -267,8 +371,14 @@ textarea {
   }
 
   .employment-text-box {
+    margin-top: 18px;
+  }
+
+  #counsel-type-group,
+  #counsel-target-group {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    gap: 5px;
   }
 }
 
