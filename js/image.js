@@ -25,6 +25,7 @@ function buildImagePrompt({ type, bible, topic, keyword, age, style, ratio }) {
   ---
   #조건
   **이미지 생성모델은 나노바나나를 사용하세요**
+  **Korean Hangul font**
   Create a ${typeMap[type] || "Christian education image"}.
 
 - 성경 본문: ${bible}
