@@ -29,6 +29,27 @@
           </ul>
         </section>
 
+        <section id="prompt" class="card">
+          <h2 class="title">공과도우미 추천 프롬프트</h2>
+          <p>
+            교단, 성경본문, 핵심주제 또는 단어을 입력하고, 프롬프트 만들기를 눌러주시면 프롬프트가
+            생성됩니다. 복사 후 챗봇에 붙여넣어주세요!
+          </p>
+
+          <input type="text" id="platform-input" placeholder="교단을 입력하세요(예: 예장합동)" />
+          <input type="text" id="bible-input" placeholder="성경 본문 (예: 마태복음 5장 1-12절)" />
+          <input type="text" id="topic-input" placeholder="핵심 주제 (예: 팔복, 행복)" />
+
+          <div class="btn-wrap">
+            <button id="generate-prompt-btn">프롬프트 만들기</button>
+            <button id="copy-prompt-btn">프롬프트 복사</button>
+          </div>
+
+          <div class="min-card">
+            <p id="prompt-result"></p>
+          </div>
+        </section>
+
         <section id="chatbot" class="card">
           <h2 class="title">학년별 챗봇</h2>
           <button class="chatbot">
@@ -52,27 +73,6 @@
               >5~6학년</a
             >
           </button>
-        </section>
-
-        <section id="prompt" class="card">
-          <h2 class="title">공과도우미 추천 프롬프트</h2>
-          <p>
-            교단, 성경본문, 핵심주제 또는 단어을 입력하고, 프롬프트 만들기를 눌러주시면 프롬프트가
-            생성됩니다. 복사 후 챗봇에 붙여넣어주세요!
-          </p>
-
-          <input type="text" id="platform-input" placeholder="교단을 입력하세요(예: 예장합동)" />
-          <input type="text" id="bible-input" placeholder="성경 본문 (예: 마태복음 5장 1-12절)" />
-          <input type="text" id="topic-input" placeholder="핵심 주제 (예: 팔복, 행복)" />
-
-          <div class="btn-wrap">
-            <button id="generate-prompt-btn">프롬프트 만들기</button>
-            <button id="copy-prompt-btn">프롬프트 복사</button>
-          </div>
-
-          <div class="min-card">
-            <p id="prompt-result"></p>
-          </div>
         </section>
       </main>
       <footer>

@@ -167,6 +167,19 @@ img {
   font-weight: 700;
 }
 
+#memo-btn {
+  width: 100%;
+  background: #ffe082;
+  padding: 15px;
+  text-align: center;
+  border-radius: 20px;
+  font-weight: 700;
+  color: #5d4037;
+  box-shadow: 0 4px 10px rgba(255, 167, 38, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+}
+
 /* ============================
    counsel.css (상담 페이지)
 ============================ */
@@ -286,6 +299,12 @@ textarea {
 }
 
 #image-type-group button:hover {
+  background: #007ee5;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(100, 181, 246, 0.7);
+}
+#image-type-group button.active {
   background: #007ee5;
   color: #fff;
   transform: translateY(-1px);
